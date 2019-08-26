@@ -1,0 +1,442 @@
+
+<mappings>
+    <format version="www">
+        <mapping>
+            <pattern>^/$</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewIndex</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>/ajax/checkLogin</pattern>
+            <action>cz.abclinuxu.servlets.ajax.ConflictingUsers</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>/ajax/checkNick</pattern>
+            <action>cz.abclinuxu.servlets.ajax.ConflictingUsers</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>/ajax/tags</pattern>
+            <action>cz.abclinuxu.servlets.ajax.TagList</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>/ajax/forum</pattern>
+            <action>cz.abclinuxu.servlets.ajax.Forum</action>
+        </mapping>
+        <mapping priority="true">
+        	<pattern>/ajax/findUser</pattern>
+        	<action>cz.abclinuxu.servlets.ajax.FindUser</action>
+        </mapping>
+        <mapping>
+            <pattern>/show</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ShowObject</action>
+        </mapping>
+        <mapping>
+            <pattern>^/hledani</pattern>
+            <action>cz.abclinuxu.servlets.html.view.Search</action>
+        </mapping>
+        <mapping>
+            <pattern>^/forum/dir</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ShowForum</action>
+        </mapping>
+        <mapping>
+            <pattern>/dir/</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewCategory</action>
+        </mapping>
+        <mapping>
+            <pattern>^/zpravicky/csv</pattern>
+            <action>cz.abclinuxu.servlets.html.various.NewsCSV</action>
+        </mapping>
+        <mapping>
+            <pattern>^/zpravicky/hledani</pattern>
+            <action>cz.abclinuxu.servlets.html.view.Search</action>
+        </mapping>
+        <mapping>
+            <pattern>^/zpravicky[/]?$</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ShowNewsPage</action>
+        </mapping>
+        <mapping>
+            <pattern>/ankety$</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewPolls</action>
+        </mapping>
+        <mapping>
+            <pattern>^/muj_obsah</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewUser</action>
+            <param name="action" value="objekty"/>
+        </mapping>
+        <mapping>
+            <pattern>^/lide</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewUser</action>
+        </mapping>
+        <mapping>
+            <pattern>^/Profile</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewUser</action>
+        </mapping>
+        <mapping>
+            <pattern>^/History</pattern>
+            <action>cz.abclinuxu.servlets.html.view.History</action>
+        </mapping>
+        <mapping>
+            <pattern>EditDiscussion</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditDiscussion</action>
+        </mapping>
+        <mapping>
+            <pattern>^/EditBookmarks</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditBookmarks</action>
+        </mapping>
+        <mapping>
+            <pattern>^/EditServers</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditServers</action>
+        </mapping>
+        <mapping>
+            <pattern>/stitky/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditTag</action>
+        </mapping>
+        <mapping>
+            <pattern>/stitky</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewTag</action>
+        </mapping>
+        <mapping>
+            <pattern>/sdilej</pattern>
+            <action>cz.abclinuxu.servlets.html.view.SharePage</action>
+        </mapping>
+        <mapping>
+            <pattern>^/EditRelated</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditRelated</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>/rating</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditRating</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>/EditMonitor</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditMonitor</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>/inset</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditAttachment</action>
+        </mapping>
+        <mapping>
+            <pattern>EditRequest</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditRequest</action>
+        </mapping>
+        <mapping>
+            <pattern>^/blog/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditBlog</action>
+        </mapping>
+        <mapping>
+            <pattern>^/blog(/|$)</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewBlog</action>
+        </mapping>
+        <mapping>
+            <pattern>^/blogy</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewBlog</action>
+        </mapping>
+        <mapping>
+            <pattern>^/desktopy</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewDesktop</action>
+        </mapping>
+        <mapping>
+            <pattern>^/videa</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewVideo</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>/diskuse$</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ShowObject</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/hry</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewGames</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/videa/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditVideo</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/software/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditSoftware</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/software</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewSoftware</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/faq/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditFaq</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/faq</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewFaq</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/desktopy/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditDesktop</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/kdo-je/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditPersonality</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/kdo-je</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewPersonality</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/slovnik/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditDictionary</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/slovnik</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ShowDictionary</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/autori</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewAuthor</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/serialy/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditSeries</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/serialy</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewSeries</action>
+        </mapping>
+        <mapping>
+            <pattern>^/Survey</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ShowSurvey</action>
+        </mapping>
+        <mapping>
+            <pattern>^/Mail</pattern>
+            <action>cz.abclinuxu.servlets.html.view.SendEmail</action>
+        </mapping>
+        <mapping>
+            <pattern>^/revize</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ShowRevisions</action>
+        </mapping>
+        <mapping>
+            <pattern>EditCategory</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditCategory</action>
+        </mapping>
+        <mapping>
+            <pattern>^/hardware/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditHardware</action>
+        </mapping>
+        <mapping>
+            <pattern>^/clanky/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditArticle</action>
+        </mapping>
+        <mapping>
+            <pattern>^/clanky/honorare</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.Royalties</action>
+        </mapping>
+        <mapping>
+            <pattern>^/ovladace/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditDriver</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/akce/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditEvent</action>
+        </mapping>
+        <mapping>
+            <pattern>^/akce</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewEvent</action>
+        </mapping>
+        <mapping>
+            <pattern>^/zpravicky/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditNews</action>
+        </mapping>
+        <mapping>
+            <pattern>^/bazar/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditBazaar</action>
+        </mapping>
+        <mapping>
+            <pattern>^/forum/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditForum</action>
+        </mapping>
+        <mapping>
+            <pattern>^/zmeny</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ContentChanges</action>
+        </mapping>
+        <mapping>
+            <pattern>^/EditSurvey</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditSurvey</action>
+        </mapping>
+        <mapping>
+            <pattern>^/editContent</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditContent</action>
+        </mapping>
+        <mapping>
+            <pattern>^/EditRelation</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditRelation</action>
+        </mapping>
+        <mapping>
+            <pattern>^/EditPoll</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditPoll</action>
+        </mapping>
+        <mapping>
+            <pattern>^/SelectRelation</pattern>
+            <action>cz.abclinuxu.servlets.html.select.SelectRelation</action>
+        </mapping>
+        <mapping>
+            <pattern>^/SelectUser</pattern>
+            <action>cz.abclinuxu.servlets.html.select.SelectUser</action>
+        </mapping>
+        <mapping>
+            <pattern>^/SelectIcon</pattern>
+            <action>cz.abclinuxu.servlets.html.select.SelectIcon</action>
+        </mapping>
+        <mapping>
+            <pattern>^/EditUser</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditUser</action>
+        </mapping>
+        <mapping>
+            <pattern>^/Group</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditGroup</action>
+        </mapping>
+        <mapping>
+            <pattern>^/nej</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ShowPage</action>
+            <param name="template" value="/show/top.ftl"/>
+            <variable name="TITLE" value="Nej"/>
+        </mapping>
+        <mapping>
+            <pattern>^/EditAdvertisement</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditAdvertisement</action>
+        </mapping>
+        <mapping>
+            <pattern>/whatHappened</pattern>
+            <action>cz.abclinuxu.scheduler.WhatHappened</action>
+        </mapping>
+        <mapping>
+            <pattern>/EditTrivia</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditTrivia</action>
+        </mapping>
+        <mapping>
+            <pattern>^/ViewDiscussion</pattern>
+            <action>cz.abclinuxu.servlets.html.view.ViewDiscussion</action>
+        </mapping>
+        <mapping>
+            <pattern>/newton</pattern>
+            <action>cz.abclinuxu.servlets.html.various.NewtonExport</action>
+        </mapping>
+        <mapping priority="true">
+            <pattern>^/skupiny/edit</pattern>
+            <action>cz.abclinuxu.servlets.html.edit.EditSubportal</action>
+        </mapping>        
+        <mapping priority="true">
+        	<pattern>^/sprava/redakce/namety/edit</pattern>
+        	<action>cz.abclinuxu.servlets.html.admin.edit.EditTopic</action>
+        </mapping>
+        <mapping priority="true">
+        	<pattern>^/sprava/redakce/namety</pattern>
+        	<action>cz.abclinuxu.servlets.html.admin.view.ShowTopic</action>
+        </mapping>
+		<mapping priority="true">
+        	<pattern>^/sprava/redakce/autori/edit</pattern>
+        	<action>cz.abclinuxu.servlets.html.admin.edit.EditAuthor</action>
+        </mapping>        
+        <mapping>
+        	<pattern>^/sprava/redakce/autori</pattern>
+        	<action>cz.abclinuxu.servlets.html.admin.view.ShowAuthor</action>
+        </mapping>
+        <mapping priority="true">
+        	<pattern>^/sprava/redakce/smlouvy/edit</pattern>
+        	<action>cz.abclinuxu.servlets.html.admin.edit.EditContract</action>
+        </mapping>
+        <mapping priority="true">
+        	<pattern>^/sprava/redakce/smlouvy</pattern>
+        	<action>cz.abclinuxu.servlets.html.admin.view.ShowContract</action>
+        </mapping>
+        <mapping>
+        	<pattern>^/sprava/redakce</pattern>
+        	<action>cz.abclinuxu.servlets.html.admin.view.EditionPortal</action>
+        </mapping>
+        <mapping>
+            <pattern>^/sprava/statistika</pattern>
+            <action>cz.abclinuxu.servlets.html.admin.PageStatistics</action>
+        </mapping>
+        <mapping>
+            <pattern>^/sprava/mailing/vikend</pattern>
+            <action>cz.abclinuxu.servlets.html.admin.edit.EditWeeklySummaryEmail</action>
+        </mapping>
+        <mapping>
+            <pattern>^/sprava</pattern>
+            <action>cz.abclinuxu.servlets.html.admin.AdminServlet</action>
+        </mapping>
+    </format>
+    <format version="wap">
+        <mapping>
+            <pattern>.*</pattern>
+            <action>cz.abclinuxu.servlets.wap.view.ShowNews</action>
+        </mapping>
+    </format>
+    <deprecated version="www">
+        <mapping>
+            <pattern input="host">^@DOMAIN_NAME@</pattern>
+            <regexp>://</regexp>
+            <replacement>://www.</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="host">abclinux.cz</pattern>
+            <regexp>.*</regexp>
+            <replacement>http://www.abclinuxu.cz/</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="host">abclinuxu.sk</pattern>
+            <regexp>abclinuxu.sk</regexp>
+            <replacement>abclinuxu.cz</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="host">palirna</pattern>
+            <regexp>.*</regexp>
+            <replacement>http://www.abclinuxu.cz/</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="path">^/Admin</pattern>
+            <regexp>/Admin</regexp>
+            <replacement>/sprava</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="path">^/news/</pattern>
+            <regexp>/news/</regexp>
+            <replacement>/zpravicky/</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="path">^/software/zebricky</pattern>
+            <regexp>/software/zebricky</regexp>
+            <replacement>/nej</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="path">^/drivers</pattern>
+            <regexp>/drivers</regexp>
+            <replacement>/ovladace</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="path">^/jobs</pattern>
+            <regexp>/jobs</regexp>
+            <replacement>/</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="path">/dir/4731</pattern>
+            <regexp>.*</regexp>
+            <replacement>/clanky/casopis-abicko</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="path">ViewRelation</pattern>
+            <regexp>ViewRelation.+(relationId|rid)=([\d]+).*</regexp>
+            <replacement>show/$2</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="path">ViewCategory</pattern>
+            <regexp>ViewCategory.+(relationId|rid|categoryId)=([\d]+).*</regexp>
+            <replacement>dir/$2</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="path">Show</pattern>
+            <regexp>Show\?(relationId|rid)=</regexp>
+            <replacement>dir/</replacement>
+        </mapping>
+        <mapping>
+            <pattern input="path">/EditItem</pattern>
+            <regexp>/EditItem</regexp>
+            <replacement>/edit</replacement>
+        </mapping>
+    </deprecated>
+</mappings>

@@ -1,0 +1,90 @@
+<h2 id="formatovani">Nápověda k formátování</h2>
+
+<p>Povolené HTML značky:
+A, ABBR, ACRONYM, B, BR, BLOCKQUOTE, CITE, CODE, DIV, EM, I, HR, H1, H2, H3, LI, OL, P, PRE, STRONG, TT, UL, VAR
+(<a href="https://zdrojaky.abclinuxu.cz/viewvc/abclinuxu/trunk/conf/tag_checker.xml?view=markup" rel="nofollow">aktuální
+konfigurace</a>).
+</p>
+
+<p>
+Pro zvýraznění syntaxe v tagu PRE použijte atribut <code>class</code>,
+kterým určíte jazyk pro zvýraznění. Hodnota atributu musí být ve tvaru: <code>class="brush: zkratka"</code>.
+<table border="1">
+    <tr>
+        <th>Jazyk</th><th>Možné zkratky</th>
+    </tr>
+    <tr>
+        <td>Bash</td><td>bash, shell</td>
+    </tr>
+    <tr>
+        <td>C#</td><td>c#, c-sharp, csharp</td>
+    </tr>
+    <tr>
+        <td>C, C++</td><td>c, cpp</td>
+    </tr>
+    <tr>
+        <td>CSS</td><td>css</td>
+    </tr>
+    <tr>
+        <td>Delphi / Pascal</td><td>delphi, pascal, pas</td>
+    </tr>
+    <tr>
+        <td>Diff</td><td>diff, patch</td>
+    </tr>
+    <tr>
+        <td>Erlang</td><td>erlang, erl</td>
+    </tr>
+    <tr>
+        <td>Groovy</td><td>groovy</td>
+    </tr>
+    <tr>
+        <td>JavaScript</td><td>js, jscript, javascript</td>
+    </tr>
+    <tr>
+        <td>Java</td><td>java</td>
+    </tr>
+    <tr>
+        <td>JavaFX</td><td>javafx, jfx</td>
+    </tr>
+    <tr>
+        <td>Perl</td><td>perl, pl</td>
+    </tr>
+    <tr>
+        <td>PHP</td><td>php</td>
+    </tr>
+    <tr>
+        <td>Plain</td><td>text, plain</td>
+    </tr>
+    <tr>
+        <td>Python</td><td>python, py</td>
+    </tr>
+    <tr>
+        <td>Ruby</td><td>ruby, rails, ror, rb</td>
+    </tr>
+    <tr>
+        <td>SQL</td><td>sql</td>
+    </tr>
+    <tr>
+        <td>Visual Basic</td><td>vb, vbnet</td>
+    </tr>
+    <tr>
+        <td>XML</td><td>xml, html, xhtml, xslt</td>
+</table>
+</p>
+
+<h2>Pokud nepoužíváte WYSIWYG editor</h2>
+
+<p>Nejrychlejší způsob formátování je rozdělovat
+text do odstavců. Systém detekuje prázdné řádky
+(dvakrát enter) a nahradí je HTML značkou odstavce.
+Pokud ale v textu použijete značku <tt>P</tt> či <tt>BR</tt>,
+pak předpokládáme, že o formátování se budete starat
+sami, a tato konverze nebude aktivována.</p>
+
+<p>Pokud neovládáte HTML, doporučuji si přečíst
+<a href="http://www.kosek.cz/clanky/html/01.html" rel="nofollow">rychlokurz</a>.</p>
+
+<p>Text musí být HTML validní, proto znak menšítka či většítka zapisujte takto:
+<code>&lt;</code> jako <code>&amp;lt;</code> a <code>&gt;</code> jako <code>&amp;gt;</code>.
+Dalším častým problémem je, jak vložit výpis logu či konfigurační soubor. V tomto
+případě váš text vložte mezi značky <code>PRE</code>, které zachovají formátování.</p>

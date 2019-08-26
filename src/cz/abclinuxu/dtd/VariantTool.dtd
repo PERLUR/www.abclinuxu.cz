@@ -1,0 +1,10 @@
+<!ELEMENT config (servlet+)>
+<!ELEMENT servlet (action+)>
+<!ATTLIST servlet name CDATA #REQUIRED>
+<!ELEMENT action (mapping+)>
+<!ATTLIST action name CDATA #REQUIRED>
+<!ATTLIST action template CDATA #OPTIONAL> <!-- overrides template selection -->
+<!ELEMENT mapping (#EMPTY)>
+<!ATTLIST mapping content CDATA #REQUIRED   <!-- name of page to be processed -->
+                  template CDATA #REQUIRED> <!-- name of template to be served -->
+

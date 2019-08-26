@@ -1,0 +1,5 @@
+1\
+(zmenit z abc na devel)
+mysql < create_mysql_scheme.sql
+
+2) ../runJava.sh cz.abclinuxu.misc.GenerateDevelDatabase

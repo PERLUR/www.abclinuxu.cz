@@ -1,0 +1,11 @@
+
+<!-- Record.ARTICLE -->
+<!ELEMENT data (content+,related?,resources?)>
+<!ELEMENT content (#PCDATA)> <!-- content of the article (or its part) -->
+<!ATTLIST content title (#PCDATA) #OPTIONAL> <!-- if there are multiple pages, you must name them -->
+<!ATTLIST content format (#NMTOKEN) #OPTIONAL> <!-- integer, format of the text -->
+<!ELEMENT related (link+)> <!-- related articles on portal -->
+<!ELEMENT resources (link+)> <!-- related resources outside of portal -->
+<!ELEMENT link (#PCDATA)> <!-- contains text of link -->
+<!ATTLIST link url (#PCDATA) #REQUIRED> <!-- URL of resource or article -->
+<!ATTLIST link description (#PCDATA) #OPTIONAL> <!-- contains description of resource or article, that shall not be linked -->

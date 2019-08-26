@@ -1,0 +1,31 @@
+# ABCLinuxu search plug-in
+# info #at# abclinuxu.cz
+# $Id$
+
+<search
+   name="Portal ABC Linuxu"
+   description="www.abclinuxu.cz - tady je tucnakum hej"
+   method="GET"
+   action="http://www.abclinuxu.cz/hledani"
+   searchForm="http://www.abclinuxu.cz/hledani"
+   queryEncoding="UTF-8"
+   queryCharset="UTF-8"
+>
+
+<input name="dotaz" user>
+<input name="sourceid" value="mozilla-search">
+
+<interpret
+   browserResultType="result"
+   charset="UTF-8"
+   resultItemStart="<!--m-->"
+   resultItemEnd="<!--n-->"
+>
+
+</search>
+
+<browser
+   update="http://www.abclinuxu.cz/data/site/abclinuxu.src"
+   updateIcon="http://www.abclinuxu.cz/images/site/abclinuxu.png"
+   updateCheckDays="3"
+>

@@ -1,0 +1,192 @@
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2.3.dtd">
+
+<web-app>
+    <display-name>portal www.abclinuxu.cz</display-name>
+
+    <listener>
+        <listener-class>
+            org.apache.commons.fileupload.servlet.FileCleanerCleanup
+        </listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>Compress</filter-name>
+        <filter-class>javawebparts.filter.CompressionFilter</filter-class>
+        <init-param>
+            <param-name>compressType</param-name>
+            <param-value>gzip_first</param-value>
+        </init-param>
+    </filter>
+    <filter>
+        <filter-name>RecordTags</filter-name>
+        <filter-class>cz.abclinuxu.servlets.filters.RecordTagViewFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Compress</filter-name>
+        <servlet-name>Controller</servlet-name>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>RecordTags</filter-name>
+        <servlet-name>Controller</servlet-name>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>CXFServlet</servlet-name>
+        <display-name>CXF Web services Servlet</display-name>
+        <servlet-class>cz.abclinuxu.servlets.ws.AbcCxfServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AbcInit</servlet-name>
+        <servlet-class>cz.abclinuxu.servlets.init.AbcInit</servlet-class>
+        <init-param>
+          <param-name>PREFERENCES</param-name>
+          <param-value>@DEPLOY_ABCLINUXU@/WEB-INF/conf/systemPrefs.xml</param-value>
+        </init-param>
+        <init-param>
+          <param-name>TEMPLATES</param-name>
+          <param-value>WEB-INF/conf/templates.xml</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>cz.abclinuxu.servlets.Controller</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>redirect</servlet-name>
+        <servlet-class>cz.abclinuxu.servlets.html.view.Redirect</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Robots</servlet-name>
+        <servlet-class>cz.abclinuxu.servlets.misc.Robots</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>SuggestSearch</servlet-name>
+        <servlet-class>cz.abclinuxu.servlets.ajax.SuggestSearch</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>WeeklyHtmlEmail</servlet-name>
+        <servlet-class>cz.abclinuxu.servlets.ajax.WeeklyHtmlEmail</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ProxoolAdmin</servlet-name>
+        <servlet-class>org.logicalcobwebs.proxool.admin.servlet.AdminServlet</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>redirect</servlet-name>
+        <url-pattern>/presmeruj</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ProxoolAdmin</servlet-name>
+        <url-pattern>/ProxoolAdmin</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Robots</servlet-name>
+        <url-pattern>/robots.txt</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SuggestSearch</servlet-name>
+        <url-pattern>/ajax/suggest</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>WeeklyHtmlEmail</servlet-name>
+        <url-pattern>/sprava/mailing/vikend/html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>jsp</servlet-name>
+        <url-pattern>/download/abicko.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CXFServlet</servlet-name>
+        <url-pattern>/services/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- static resources -->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>/data/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>/download/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>/images/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>/ikony/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>/auto/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>/tmp/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>*.bz2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>*.gz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>*.tgz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>*.zip</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>*.css</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>*.txt</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>*.htm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name><url-pattern>*.ico</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+    </welcome-file-list>
+
+    <mime-mapping>
+        <extension>rss</extension>
+        <mime-type>application/rss+xml</mime-type>
+    </mime-mapping>
+    <session-config>
+      <cookie-config>
+        <http-only>true</http-only> 
+      </cookie-config>
+    </session-config>
+</web-app>

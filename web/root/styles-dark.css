@@ -1,0 +1,477 @@
+@import url("layout.css");
+@import url("/data/syntaxhighlighter/styles/shCore.css");
+@import url("/data/syntaxhighlighter/styles/shThemeRDark.css");
+
+body {
+	background-color: black;
+	color: #DEDEDE;
+}
+
+hr {
+	border-color: transparent;
+	border-top-color: #808080;
+}
+
+.obal a[href^="http://"],
+.obal a[href^="https://"],
+.obal a[href^="ftp://"] {
+	background-image: url("/images/site2/ext-arrow-80bbca.gif");
+}
+.obal a[href^="http://"]:hover,
+.obal a[href^="https://"]:hover,
+.obal a[href^="ftp://"]:hover {
+	background-image: url("/images/site2/ext-arrow-000.gif");
+}
+.obal a.noext, .obal .noext a,
+.obal a[href^="http://www.abclinuxu.cz"],
+.obal a[href^="http://abclinuxu.cz"],
+.obal a[href^="https://www.abclinuxu.cz"],
+.obal a[href^="https://abclinuxu.cz"],
+.obal a.noext:hover, .obal .noext a:hover,
+.obal a[href^="http://www.abclinuxu.cz"]:hover,
+.obal a[href^="http://abclinuxu.cz"]:hover,
+.obal a[href^="https://www.abclinuxu.cz"]:hover,
+.obal a[href^="https://abclinuxu.cz"]:hover {
+	background-image: none;
+}
+
+.st a[href^="/slovnik/"],
+.st a[href^="http://www.abclinuxu.cz/slovnik/"],
+.st a[href^="https://www.abclinuxu.cz/slovnik/"],
+.st a[href^="http://abclinuxu.cz/slovnik/"],
+.st a[href^="https://abclinuxu.cz/slovnik/"] {
+	background-image: url("/images/site2/slovnik.png");
+}
+.st .bez-slovniku a,
+.st a.bez-slovniku {
+	background-image: none;
+}
+
+a,
+.s ul,
+.ramec ul,
+.boxy ul,
+.rozc ul,
+.new_comment_state { color: #80BBCA; }
+
+a:hover {
+	color: black;
+	background-color: #80BBCA;
+}
+
+.cerny { color: black; }
+.error { color: red; }
+.message { color: blue; }
+
+.obal {
+	border-color: #4B4B4B;
+	background-color: black;
+}
+
+input, select, textarea, .button,
+#zh-hledani input.text:hover,
+#zh-hledani input.text:focus {
+	background-color: #BCBCBC;
+	color: black;
+}
+
+#zh-hledani input.text,
+.s_sekce form div input.text {
+	background-color: #575757;
+}
+
+/********************************************************/
+#zh-logo a {
+	background-image: url('/images/site2/abc-dark.gif');
+}
+
+#zh-logo a:hover {
+	background-color: transparent;
+}
+
+/********************************************************/
+.roh2 {
+	background-color: #3A3A3A;
+	border-left-color: #4B4B4B;
+	border-right-color: #4B4B4B;
+}
+
+.roh1 {
+	background-color: #4B4B4B;
+}
+
+.menu-kont {
+	background-color: #3A3A3A;
+	border-color: #4B4B4B;
+}
+
+.menu>li {
+	border-top-color: #4B4B4B;
+}
+
+.menu a {
+	background-color: #3A3A3A;
+}
+
+.menu a:hover {
+	background-color: #80BBCA;
+}
+
+.menu>li>a {
+	border-left-color: #3A3A3A;
+	border-right-color: #3A3A3A;
+}
+
+.menu>li:hover>a {
+	background-color: #80BBCA;
+	color: #3A3A3A;
+	border-left-color: #4B4B4B;
+	border-right-color: #4B4B4B;
+}
+
+.menu>li:hover>a:hover {
+	color: black;
+}
+
+.menu ul a {
+	border-bottom-color: #575757;
+}
+
+.menu ul {
+	border-color: #4B4B4B;
+}
+
+/********************************************************/
+.hl {
+	background-color: #1A425D;
+	color: #9A9A9A;
+	border-bottom-color: #4B4B4B;
+}
+
+.hl a,
+.dl a,
+.st_nadpis a,
+.s_nadpis a { color: #DEDEDE; }
+
+.hl a:hover,
+.dl a:hover,
+.s_nadpis a:hover {
+	background-color: transparent;
+	color: #80BBCA;
+}
+
+.hl ul.menu-drop {
+	background-color: #1A425D;
+	border-color: #4B4B4B;
+}
+.hl ul.menu-drop li { border-top-color: #4B4B4B; }
+
+.pwd-box {
+	border-color: gray;
+	background-color: #ececec;
+}
+
+.st {
+	background-color: #202020;
+	border-left-color: #4B4B4B;
+}
+
+.st_nadpis a:hover {
+	background-color: transparent;
+	color: #DEDEDE;
+}
+
+.st a:hover img {
+	background-color: #202020;
+}
+
+td.pad,code.kod,pre.kod {
+	border-color: #9A9A9A;
+	background-color: #575757;
+}
+
+.cl_highlight {
+	border-color: silver;
+	background-color: #23597D;
+}
+
+.cl_perex,
+.perex,
+.host .spec,
+.souvisejici {
+	border-color: #1A425D;
+	background-color: #494949;
+}
+
+.rating {
+	background-color: #494949;
+	border-color: #1A425D;
+}
+
+.stupnice {
+	background-color: #DEDEDE;
+	border-color: #4B4B4B;
+}
+
+.rtut, .cl-teplomer {
+	background-color: #0F598C;
+}
+
+.uceb-nav span {
+	background-color: black;
+	border-color: #4B4B4B;
+}
+
+.ds,
+.hw,
+.sw,
+.bazar,
+.autor { border-bottom-color: #1A425D; }
+
+.ds thead td,
+.hw thead td,
+.sw thead td,
+.faq thead td,
+.bazar thead td,
+.autor thead td {
+	border-bottom-color: #4B4B4B;
+	background-color: transparent;
+}
+
+.ds tbody tr:hover,
+.autor tbody tr:hover,
+.bazar table.bazar-polozky tbody tr:hover,
+.hw table.hw-polozky tbody tr:hover,
+.sw table.sw-polozky tbody tr:hover {
+	background-color: #494949
+}
+
+.ds tr:nth-child(even),
+.autor tr:nth-child(even),
+.bazar table.bazar-polozky tr:nth-child(even),
+.hw table.hw-polozky tr:nth-child(even),
+.sw table.sw-polozky tr:nth-child(even) {
+	background-color: #303030
+}
+
+a.thumb:hover,
+.cl-obrazky a:hover,
+.galerie a:hover,
+.sw h3 a:hover { background-color: transparent; }
+
+.prodej { color: #90EE90; }  /* lightgreen */
+.koupe { color: #FFC0CB; }  /* pink */
+
+.meta-vypis,
+.treeview li span { color: #9A9A9A; }
+
+.ds_toolbox, .pwd-box, .cl-obrazky {
+	background-color: black;
+	border-color: #4B4B4B;
+}
+
+.ds_hlavicka,
+.ds_attachments,
+.ds_hlavicka_novy { border-top-color: #1A425D; }
+
+.ds_hlavicka_blacklisted { color: #999999; }
+.ds_hlavicka { background-color: #494949; }
+.ds_hlavicka_me { background-color: #335533; }
+.ds_hlavicka_novy { background-color: #23597D; }
+.ds_hlavicka_odkazy { color: #1A425D; }
+
+.kt_citace, .cl_citace { color: #FF8282 }
+
+.s_odkaz { color: #1A425D; }
+
+.s_nadpis {
+	border-color: #4B4B4B;
+	background-color: #1A425D;
+	color: #DEDEDE;
+}
+
+a.info {
+	border-color: #4B4B4B;
+	background-color: #202020;
+	color: #DEDEDE;
+}
+
+a.info:hover {
+	background-color: #80BBCA;
+	color: black;
+}
+
+a.info:hover span.tooltip {
+	border-color: #DEDEDE;
+	background-color: #494949;
+	color: white;
+}
+
+.s ul span.regular-color { color: white; }
+
+.ramec span, .s ul span { color: #DEDEDE }
+
+.ramec {
+	border-color: #4B4B4B;
+	background-color: black;
+}
+
+.obal_ls,
+.obal_ps {
+	background-color: black;
+	border-color: #4B4B4B;
+}
+
+#ls_prepinac {
+	border-color: #4B4B4B;
+	background-color: #1A425D;
+	color: #DEDEDE;
+}
+
+.ls_zpr span { color: #9A9A9A; }
+
+.s_reklama a:hover,
+.s_logo a:hover { background-color: transparent; }
+
+.gg-sky { border-left-color: #4B4B4B; }
+
+.ank-sloup {
+	border-top-color: #81AECD;
+	border-bottom-color: #1B275E;
+	background-color: #0F598C;
+}
+
+.ank-sloup-okraj { border-color: #4B4B4B; }
+
+.ank td,
+.ank-odpov { border-top-color: #4B4B4B; }
+
+.rozc a.server {
+	color: #DEDEDE;
+	border-bottom-color: #80BBCA;
+}
+
+.rozc a.server:hover { color: black }
+
+.rozc td,.boxy td,.host .prehled td {
+	background-color: black;
+	border-color: #4B4B4B;
+}
+
+.boxy td {
+	background-color: black;
+	border-color: #4B4B4B;
+}
+
+.dl,
+.dl_vlevo,
+.dl_vpravo {
+	color: #DEDEDE;
+	background-color: #1A425D;
+}
+
+.textad {
+	border-color: #4B4B4B;
+	background-color: #494949;
+}
+
+.form-edit a {
+	border-color: #575757;
+	color: #DEDEDE;
+	background-color: black;
+}
+
+.form-edit a:hover {
+	background-color: #80BBCA;
+	color: black;
+}
+
+.dict-abc a:hover { background-color: #80BBCA; }
+
+a.selected {
+	background-color: #80BBCA;
+	color: black;
+}
+a.selected:hover {
+	color: black;
+}
+
+.dict-abc a,
+.dict-item,
+.bazar-ad { background-color: #494949; }
+
+.odd { background-color: #494949; }
+
+.game-results { background-color: gray; }
+.game-wrong { color: #FFC0CB; } /* pink */
+
+/*************** SF lista *****************/
+.sflista {
+	border-color: #575757 #4B4B4B #4B4B4B #575757;
+	background-color: #494949;
+}
+
+.sflista a {
+	color: #DEDEDE;
+	border-color: #494949;
+}
+
+.sflista a:hover {
+	color: #DEDEDE;
+	border-color: black #9A9A9A #9A9A9A black;
+	background-color: #575757;
+}
+
+/*     treemenu     */
+.treeview li {
+	background-image: url("/images/site2/menu-link.gif");
+}
+
+.treeview li.submenu {
+	background-image: url("/images/site2/menu-closed.gif");
+}
+
+.skoleni table { border-bottom-color: silver; }
+.skoleni table td { background-color: #494949; }
+
+.arbo-sky,
+.arbo-sq { background-color: #202020; }
+
+.ad_active { color: green; }
+.ad_inactive { color: red; }
+
+.itbiz { border-color: #1a425d;
+         background-image: url('/images/site2/itbiz-top-bg-dark.gif');
+         background-color: black; }
+.itbiz a { color: white;
+           text-decoration: none; }
+.itbiz a:hover { color: white;
+                 text-decoration: underline;
+                 background-color: transparent; }
+.itbiz a.logo { background-image: url('/images/site2/itbiz-logo-dark60x18.png'); }
+.itbiz .logo-it { color: #0000ff; }
+.itbiz .logo-biz { color: #ff0000; }
+.itbiz .header a:hover { text-decoration: none; }
+.itbiz a img:hover, .stitek:hover { background-color: transparent; }
+
+.stitek:hover { text-decoration: line-through; color: white; }
+
+.modalWindow {
+        background-color: black;
+        border: 1px solid white;
+}
+
+.eventCalendar td { border-color: transparent; }
+.eventCalendar #today { background-color: #575757; }
+.eventCalendar .selected a,
+.event_time .selected a,
+.event_type .selected a { background-color: #80BBCA; color: black; }
+.eventCalendar .event_day,
+#gg_map { border-color: #4B4B4B; }
+.event_hdr {
+  border-color: #4B4B4B;
+  background-color: black;
+}
+
+.linkbox table a:hover { background: transparent; }
+.linkbox .nazev_clanku a:hover { background: #80BBCA; }

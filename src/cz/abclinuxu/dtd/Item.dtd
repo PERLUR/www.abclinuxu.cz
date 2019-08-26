@@ -1,0 +1,282 @@
+
+<!-- Item.HARDWARE -->
+<!ELEMENT data (support?,driver?,driver_url?,outdated?,setup?,params?,identification?,note?)>
+<!ELEMENT support (#PCDATA)> <!-- if and how the piece of hardware is supported (complete, partial, none) -->
+<!ELEMENT driver (#PCDATA)> <!-- kind of driver: kernel, XFree, binary -->
+<!ELEMENT driver_url (#PCDATA)> <!-- URL where driver can be downloaded -->
+<!ELEMENT outdated (#PCDATA)> <!-- yes will mean that this piece of hardware is really old -->
+<!ELEMENT setup (#PCDATA)> <!-- how to set up this hardware -->
+<!ATTLIST setup format (#NMTOKEN) #OPTIONAL> <!-- integer, format of the text -->
+<!ELEMENT params (#PCDATA)> <!-- technical parameters (resolution, max syncs, ..) -->
+<!ATTLIST params format (#NMTOKEN) #OPTIONAL> <!-- integer, format of the text -->
+<!ELEMENT identification (#PCDATA)> <!-- how Linux identifies this hardware (/proc, lspci) -->
+<!ATTLIST identification format (#NMTOKEN) #OPTIONAL> <!-- integer, format of the text -->
+<!ELEMENT note (#PCDATA)> <!-- other note, user's experience -->
+<!ATTLIST note format (#NMTOKEN) #OPTIONAL> <!-- integer, format of the text -->
+
+<!-- Item.SOFTWARE -->
+<!ELEMENT data (description, intro, url+)>
+<!ELEMENT description (#PCDATA)> <!-- long description -->
+<!ATTLIST description format (#NMTOKEN) #OPTIONAL> <!-- integer, format of the text -->
+<!ELEMENT intro (#PCDATA)> <!-- string describing this software displayed at software listing, typically first sentence from description -->
+<!ELEMENT url (#PCDATA)> <!-- an url related to the software -->
+<!ATTLIST url useType (#NMTOKEN)> <!-- type of given url (homepage, download, rss) -->
+
+<!-- Item.ARTICLE -->
+<!ELEMENT data (icon?,perex,editor?,forbid_discussions?,forbid_rating?,thumbnail?,talk?,series_rid?)>
+<!ATTLIST data do_not_index (#NMTOKEN) #OPTIONAL> <!-- if true, fulltext indexing must ignore this article  -->
+<!ELEMENT icon (#PCDATA)> <!-- absolute path including protocol, or relative path to icon directory -->
+<!ELEMENT perex (#PCDATA)> <!-- description of the article -->
+<!ELEMENT editor (#PCDATA)> <!-- who approved this article -->
+<!ELEMENT forbid_discussions (#PCDATA)> <!-- yes will prohibit discussions to this article -->
+<!ELEMENT forbid_rating (#PCDATA)> <!-- yes will prohibit rating of this article -->
+<!ELEMENT series_rid (#PCDATA)> <!-- relation id of associated articles series -->
+<!ELEMENT thumbnail (#PCDATA)> <!-- element with HTML definition for an icon in article listing -->
+<!ELEMENT talk (addresses?, question*)> <!-- container for talk -->
+<!ATTLIST talk lastid (#NMTOKEN) #REQUIRED> <!-- id of last added question -->
+<!ELEMENT addresses (email*)> <!-- container for email addresses of people in talk -->
+<!ATTLIST addresses moderator (#NMTOKEN) #REQUIRED> <!-- email address of sender -->
+<!ELEMENT email (#PCDATA)> <!-- email address of person in conversation -->
+<!ELEMENT question (#PCDATA)> <!-- one question in talk -->
+<!ATTLIST question id (#NMTOKEN) #REQUIRED> <!-- unique id of question -->
+<!ATTLIST question name (#NMTOKEN) #REQUIRED> <!-- name of person, who asked the question -->
+
+
+<!-- Item.Discussion -->
+<!ELEMENT data (comments, last_id?, author?, author_ip?, text, frozen?, solved?)>
+<!ELEMENT comments (#PCDATA)> <!-- integer, number of comments or replies -->
+<!ELEMENT last_id (#PCDATA)> <!-- integer, id of last comment -->
+<!ELEMENT author (#PCDATA)> <!-- unknow user's name -->
+<!ELEMENT author_ip (#PCDATA)> <!-- IP address of the user -->
+<!ELEMENT text (#PCDATA)> <!-- its text -->
+<!ATTLIST text format (#NMTOKEN) #OPTIONAL> <!-- integer, format of the text -->
+<!ELEMENT frozen (#PCDATA)> <!-- if present, discussion is frozen and noone can add more comments -->
+
+<!-- Item.Request -->
+<!ELEMENT data (author?,text,email?,category?)>
+<!ELEMENT author (#PCDATA)> <!-- unknow user's name -->
+<!ELEMENT email (#PCDATA)> <!-- title of this reaction, usually question -->
+<!ELEMENT text (#PCDATA)> <!-- its text -->
+<!ELEMENT category (#PCDATA)> <!-- name of category -->
+
+<!-- Item.Driver -->
+<!ELEMENT data (name,version,url,note?)>
+<!ELEMENT version (#PCDATA)> <!-- driver's version -->
+<!ELEMENT url (#PCDATA)> <!-- its url -->
+<!ELEMENT note (#PCDATA)> <!-- its description -->
+<!ATTLIST note format (#NMTOKEN) #OPTIONAL> <!-- integer, format of the text -->
+
+<!-- Item.Survey -->
+<!ELEMENT anketa (screen+,choices?)>
+<!ELEMENT choices (#PCDATA)> <!-- which parameters are choices (aka they are not texts) -->
+<!ELEMENT choice (#PCDATA)> <!-- name of choice parameter-->
+<!ELEMENT screen (#PCDATA)> <!-- definition of one screen -->
+<!ATTLIST screen id (#ID) #REQUIRED> <!-- identifier of the screen, first screen must have id "START" -->
+<!ATTLIST screen check (TRUE) #OPTIONAL> <!-- if set, perform check, that the user has not voted yet -->
+<!ATTLIST screen onlyUsers (FALSE) #OPTIONAL> <!-- if set, then users must login first -->
+<!ELEMENT template (#PCDATA)> <!-- name of template, that shall be displayed to the user -->
+<!ELEMENT dump (dir,prefix,suffix)> <!-- instructs to dump all parameters to xml file -->
+<!ELEMENT email (to+,cc*)> <!-- send results via email -->
+<!ELEMENT to (#PCDATA)> <!-- TO recepient -->
+<!ELEMENT cc (#PCDATA)> <!-- CC recepient -->
+<!ELEMENT bcc (#PCDATA)> <!-- BCC recepient -->
+<!ELEMENT dir (#PCDATA)> <!-- directory, where to create a file -->
+<!ELEMENT prefix (#PCDATA)> <!-- file will start with this prefix -->
+<!ELEMENT suffix (#PCDATA)> <!-- file will end with this suffix -->
+
+<!-- Item.NEWS -->
+<!ELEMENT data (perex?, content, approved_by?)>
+<!ELEMENT content (#PCDATA)> <!-- text of the news -->
+<!ATTLIST content format (#NMTOKEN) #OPTIONAL> <!-- integer, format of the text -->
+<!ELEMENT perex (#PCDATA)> <!-- shorter version if the text is too long or contains more paragraphs -->
+<!ELEMENT approved_by (#PCDATA)> <!-- id of admin, who approved the news -->
+<!ELEMENT locked_by (#PCDATA)> <!-- id of admin, who locked this news -->
+
+<!-- Item.GROUP -->
+<!ELEMENT data (desc)>
+<!ELEMENT desc (#PCDATA)> <!-- sentence describing group -->
+
+<!-- Item.Royalties -->
+<!ELEMENT data (paid?, amount, note?)>
+<!ELEMENT paid (#PCDATA)> <!-- ISO representation of day, when royalties were paid -->
+<!ELEMENT amount (#PCDATA)> <!-- integer, money value of royalties -->
+<!ELEMENT note (#PCDATA)> <!-- additional information -->
+
+<!-- Item.DICTIONARY -->
+<!ELEMENT data (description)>
+<!ELEMENT description (#PCDATA)> <!-- explanation -->
+
+<!-- Item.PERSONALITY -->
+<!ELEMENT data (firstname, surname, description, url+, date+)>
+<!ELEMENT firstname (#PCDATA)> <!-- first name of the person -->
+<!ELEMENT surname (#PCDATA)> <!-- surname of the person -->
+<!ELEMENT description (#PCDATA)> <!-- explanation -->
+<!ELEMENT url (#PCDATA)> <!-- an url related to the personality -->
+<!ATTLIST url useType (#NMTOKEN)> <!-- type of given url (rss, info) -->
+<!ELEMENT date (#PCDATA)> <!-- a date related to the personality -->
+<!ATTLIST date type (#NMTOKEN)> <!-- type of the date (birth, death) -->
+
+<!-- Item.CONTENT -->
+<!ELEMENT data (content, class?, toc?)>
+<!ELEMENT content (#PCDATA)> <!-- content to be served -->
+<!ATTLIST content execute (yes|no) #REQUIRED> <!-- boolean, whether to execute content through template engine -->
+<!ELEMENT java_class (#PCDATA)> <!-- java class to feed data to content -->
+<!ELEMENT toc (#PCDATA)> <!-- integer, relation id of item holding TOC for this content -->
+
+<!-- Item.TOC -->
+<!ELEMENT data (node)>
+<!ELEMENT node (node*)> <!-- document -->
+<!ATTLIST node rid (#NMTOKEN) #REQUIRED> <!-- integer, id of the content relation -->
+
+<!-- Item.BLOG -->
+<!ELEMENT data (perex?, content, category?, watchDiscussion)>
+<!ELEMENT perex (#PCDATA)> <!-- story's perex for long stories -->
+<!ATTLIST perex format (#NMTOKEN) #OPTIONAL> <!-- integer, format of the text -->
+<!ELEMENT content (#PCDATA)> <!-- content of the story -->
+<!ATTLIST content format (#NMTOKEN) #OPTIONAL> <!-- integer, format of the text -->
+<!ELEMENT category (#NMTOKEN)> <!-- integer, if od the category. See blog/categories -->
+<!ELEMENT watchDiscussion (yes,no) #OPTIONAL)> <!-- boolean; flag to watch discussion when story is delayed, defaults to false -->
+
+<!-- Item.FAQ -->
+<!ELEMENT data (text,links?)>
+<!ELEMENT text (#PCDATA)> <!-- its text -->
+<!ATTLIST text format (#NMTOKEN) #OPTIONAL> <!-- integer, format of the text -->
+
+<!-- Item.id==Constants.ITEM_DYNAMIC_CONFIGURATION -->
+<!ELEMENT data (feeds?,blog_digest?,advertisement?)>
+<!ELEMENT feeds (feed+)>
+<!ELEMENT feed (#PCDATA)> <!-- URL of feed. It must be RSS or Atom -->
+<!ATTLIST feed relation (#NMTOKEN) #REQUIRED> <!-- integer, id of parent relation, where to store links -->
+<!ATTLIST feed type (#NMTOKEN) #REQUIRED> <!-- alowed value is software -->
+<!ELEMENT blog_digest (story+)> <!-- container for selected blog stories, that form special RSS -->
+<!ELEMENT story (#PCDATA)> <!-- integer, id of relation for selected high-quality story -->
+<!ELEMENT advertisement (position*)> <!-- container for advertisement configuration -->
+<!ELEMENT position (name,description?,code+)> <!-- one ad position -->
+<!ATTLIST position id (#NMTOKEN) #REQUIRED> <!-- identifier of position, it is used in templates -->
+<!ATTLIST position active (yes,no) #REQUIRED> <!-- boolean, whether is this position active -->
+<!ELEMENT description (#PCDATA)> <!-- description of this position -->
+<!ELEMENT code (#PCDATA)> <!-- content of the advertisement, typically javascript code from some agency -->
+<!ATTLIST code regexp CDATA #IMPLIED> <!-- default code does not have this attribute, all other codes must define it -->
+<!ATTLIST code description (#PCDATA)> <!-- description of this code -->
+<!ATTLIST code dynamic (yes,no) #OPTIONAL)> <!-- boolean, determines whether this code must be preprocessed with freemarker, defaults to false -->
+
+<!-- Item.id==Constants.ITEM_WEEKLY_SUMMARY_EMAIL -->
+<!ELEMENT data (html, text)>
+<!ELEMENT html (#PCDATA)> <!-- freemarker code to generate HTML variant -->
+<!ELEMENT text (#PCDATA)> <!-- freemarker code to generate plain text variant -->
+
+<!-- Item.ADVERTISEMENT -->
+<!ELEMENT data (active,description?,codes?)>
+<!ELEMENT description (#PCDATA)> <!-- description of this position -->
+<!ELEMENT active (yes,no) #REQUIRED)> <!-- boolean, whether this position is active -->
+<!ELEMENT codes (code*)> <!-- container for codes -->
+<!ELEMENT code (variants?)> <!-- a code -->
+<!ATTLIST code regexp CDATA #IMPLIED> <!-- code regexp -->
+<!ATTLIST code name (#PCDATA)> <!-- name of the code -->
+<!ATTLIST code description (#PCDATA)> <!-- the code's description -->
+<!ELEMENT variants (variant*)> <!-- container for variants -->
+<!ELEMENT variant (#PCDATA)> <!-- HTML code of the advertisement -->
+<!ATTLIST variant description (#PCDATA) #OPTIONAL> <!-- description of this variant -->
+<!ATTLIST variant tags (#PCDATA) #OPTIONAL> <!-- a list of tags separated by spaces -->
+<!ATTLIST variant dynamic (yes,no) #OPTIONAL)> <!-- boolean, determines whether this variant's code must be preprocessed with freemarker, defaults to false -->
+<!ATTLIST variant active (yes,no)> <!-- boolean, determines whether this variant is active -->
+
+<!-- Item.BAZAAR -->
+<!ELEMENT data (text)>
+<!ELEMENT text (#PCDATA)> <!-- content of the advertisement -->
+<!ELEMENT price (#PCDATA)> <!-- requested price -->
+<!ELEMENT contact (#PCDATA)> <!-- contact for the person -->
+
+<!-- Item.AUTHOR -->
+<!ELEMENT data (firstname?, surname, birthNumber?, nickname?, accountNumber?, email?, phone?, address?)>
+<!ELEMENT firstname (#PCDATA)> <!-- First name(s) of the author -->
+<!ELEMENT surname (#PCDATA)> <!-- Surname of the author -->
+<!ELEMENT nickname (#PCDATA)> <!-- Nickname of the author -->
+<!ELEMENT birthNumber (#PCDATA)> <!-- author's birth number -->
+<!ELEMENT accountNumber (#PCDATA)> <!-- author's bank account number -->
+<!ELEMENT email (#PCDATA)> <!-- author's e-mail -->
+<!ELEMENT phone (#PCDATA)> <!-- author's phone number -->
+<!ELEMENT address (#PCDATA)> <!-- author's home address -->
+
+<!-- Item.TRIVIA -->
+<!ELEMENT data (description, difficulty, stats, question+)>
+<!ELEMENT description (#PCDATA)> <!-- description of the game -->
+<!ELEMENT difficulty (#PCDATA)> <!-- values: simple, normal, hard, guru -->
+<!ELEMENT question (content,answear+)> <!-- contact for the person -->
+<!ELEMENT content (#PCDATA)> <!-- text of the question -->
+<!ELEMENT answear (#PCDATA)> <!-- possible answear -->
+<!ATTLIST answear id (#NMTOKEN) #REQUIRED> <!-- random value, id of answear within one question -->
+<!ATTLIST answear correct (TRUE) #OPTIONAL> <!-- if set to true, then this answear is correct -->
+<!ELEMENT stats (sum, count)> <!-- statistics of the quiz -->
+<!ELEMENT sum (#PCDATA)> <!-- total sum of all play results -->
+<!ELEMENT count (#PCDATA)> <!-- count of all plays -->
+
+<!-- Item.HANGMAN -->
+<!ELEMENT data (desc, word)>
+<!ELEMENT desc (#PCDATA)> <!-- description of the game -->
+<!ELEMENT word (#PCDATA)> <!-- word to be guessed -->
+
+<!-- Item.SERIES -->
+<!ELEMENT data (description?, icon?, article*)>
+<!ELEMENT description (#PCDATA)> <!-- description of the series -->
+<!ELEMENT icon (#PCDATA)> <!-- url to icon for this series -->
+<!ELEMENT article (#PCDATA)> <!-- id of relation for article associated with this series, articles are sorted by published date in ascending order -->
+<!ATTLIST article published (#NMTOKEN)> <!-- date in ISO format (YYYY-MM-DD), when this article was published -->
+
+<!-- Item.DESKTOP -->
+<!ELEMENT data (description, theme_url?)>
+<!ELEMENT description (#PCDATA)> <!-- description of the desktop -->
+<!ELEMENT theme_url (#PCDATA)> <!-- URL for theme or backround image used in desktop -->
+
+<!-- Item.MESSAGE -->
+<!ELEMENT data (message, sender?, email?, uid?)>
+<!ELEMENT message (#PCDATA)> <!-- plain text of the message to the user -->
+<!ELEMENT email (#PCDATA)> <!-- optional email address of the sender -->
+<!ELEMENT sender (#PCDATA)> <!-- optional name of the sender -->
+<!ELEMENT uid (#PCDATA)> <!-- user account id of sender, if he is logged in -->
+
+<!-- Item.EVENT -->
+<!ELEMENT data (descriptionShort, description?, icon?)>
+<!ELEMENT description (#PCDATA)> <!-- long description of the event -->
+<!ELEMENT descriptionShort (#PCDATA)> <!-- short description displayed as a perex and in the list of events -->
+<!ELEMENT icon (#PCDATA)> <!-- optional event logo -->
+
+<!-- Item.CONTRACT_TEMPLATE -->
+<!ELEMENT data (content, description) >
+<!ELEMENT content (#PCDATA) > <!-- textual content of contract -->
+<!ELEMENT description (#PCDATA)> <!-- template content containing freemarker expressions -->
+
+<!-- Item.SIGNED_CONTRACT -->
+<!ELEMENT data (content) >
+<!ELEMENT description (#PCDATA)> <!-- text of the contract -->
+
+<!-- common -->
+
+<!ELEMENT versioning (title?, properties*, revisions?)> <!-- mandatory element under root that contains versioning specific data -->
+<!ELEMENT title (#PCDATA)> <!-- GenericDataObject's title property -->
+<!ELEMENT properties (property*)> <!-- container for CommonObject properties, it is stored in version database table only -->
+<!ELEMENT property (key, value+)> <!-- property -->
+<!ELEMENT key (#PCDATA)> <!-- property key -->
+<!ELEMENT value (#PCDATA)> <!-- property value -->
+<!--
+    Container for versioning information, it must be stored in specific GenericDatabaseObject table only.
+    Its purpose is to hold some versioning information so we don't need to access database in every request.
+    It must exist if the object has been stored in persistence.
+ -->
+<!ELEMENT revisions (committers?)>
+<!ATTLIST revisions last (#NMTOKEN) #OPTIONAL> <!-- integer, id of latest revision. It is mandatory, unless the object has not been persisted yet. -->
+<!ELEMENT committers (creator, last, committer*)> <!-- users participating on this document -->
+<!ELEMENT creator (#PCDATA)> <!-- integer, id of user that committed initial revision -->
+<!ELEMENT last (#PCDATA)> <!-- integer, id of user that committed last revision -->
+<!ELEMENT committer (#PCDATA)> <!-- integer, id of user that committed one of last revisions (the first and the last are excluded) -->
+
+<!ELEMENT related (document*)> <!-- container for related documents, it can be attached to FAQ, Software, Driver -->
+<!ELEMENT document (title, url, description?)> <!-- one related document -->
+<!ATTLIST document type (#NMTOKEN)> <!-- type of document, see Constants.java -->
+<!ELEMENT title (#PCDATA)> <!-- title for this document -->
+<!ELEMENT url (#PCDATA)> <!-- url to this document, it shall be local for documents stored in portal -->
+<!ELEMENT description (#PCDATA)> <!-- optional description of the document -->
+
+<!ELEMENT rating (sum, count)> <!-- rating of the object -->
+<!ELEMENT sum (#PCDATA)> <!-- total sum of all ratings -->
+<!ELEMENT count (#PCDATA)> <!-- count of all ratings -->

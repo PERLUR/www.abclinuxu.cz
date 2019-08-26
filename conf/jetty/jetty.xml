@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+<!-- Documentation of this file format can be found at:              -->
+<!-- http://docs.codehaus.org/display/JETTY/jetty.xml                -->
+
+<Configure id="Server" class="org.mortbay.jetty.Server">
+
+    <Set name="ThreadPool">
+        <New class="org.mortbay.thread.BoundedThreadPool">
+            <Set name="minThreads">10</Set>
+            <Set name="lowThreads">50</Set>
+            <Set name="maxThreads">250</Set>
+        </New>
+    </Set>
+
+    <!-- host shall be commented out if jetty shall listen on all network interfaces -->
+
+    <!--Call name="addConnector">
+        <Arg>
+            <New class="org.mortbay.jetty.nio.SelectChannelConnector">
+                <Set name="port">
+                    <SystemProperty name="jetty.port" default="@JETTY_PORT@"/>
+                </Set>
+                <Set name="host">@JETTY_HOST@</Set>
+                <Set name="maxIdleTime">30000</Set>
+                <Set name="Acceptors">2</Set>
+                <Set name="confidentialPort">8443</Set>
+            </New>
+        </Arg>
+    </Call-->
+
+    <Call name="addConnector">
+        <Arg>
+            <New class="org.mortbay.jetty.bio.SocketConnector">
+                <Set name="port">@JETTY_PORT@</Set>
+                <Set name="host">@JETTY_HOST@</Set>
+                <Set name="maxIdleTime">50000</Set>
+                <Set name="lowResourceMaxIdleTime">1500</Set>
+            </New>
+        </Arg>
+    </Call>
+
+    <!-- Set handler Collection Structure -->
+    <Set name="handler">
+        <New id="Handlers" class="org.mortbay.jetty.handler.HandlerCollection">
+            <Set name="handlers">
+                <Array type="org.mortbay.jetty.Handler">
+                    <Item>
+                        <New id="Contexts" class="org.mortbay.jetty.handler.ContextHandlerCollection"/>
+                    </Item>
+                    <Item>
+                        <New id="DefaultHandler" class="org.mortbay.jetty.handler.DefaultHandler"/>
+                    </Item>
+                    <Item>
+                        <New id="RequestLog" class="org.mortbay.jetty.handler.RequestLogHandler"/>
+                    </Item>
+                </Array>
+            </Set>
+        </New>
+    </Set>
+
+    <New id="abicko" class="org.mortbay.jetty.webapp.WebAppContext">
+        <Set name="contextPath">/</Set>
+        <Set name="war">@DEPLOY_ABCLINUXU@</Set>
+        <Set name="extractWAR">true</Set>
+        <Set name="defaultsDescriptor">
+            <SystemProperty name="jetty.home" default="."/>/etc/webdefault.xml
+        </Set>
+    </New>
+
+    <Ref id="Contexts">
+        <Call name="addHandler">
+            <Arg>
+                <Ref id="abicko"/>
+            </Arg>
+        </Call>
+    </Ref>
+
+    <Ref id="RequestLog">
+        <Set name="requestLog">
+            <New id="RequestLogImpl" class="org.mortbay.jetty.NCSARequestLog">
+                <Arg>@DEPLOY_LOGS@/yyyy_mm_dd.request.log</Arg>
+                <Set name="retainDays">90</Set>
+                <Set name="append">true</Set>
+                <Set name="extended">true</Set>
+                <Set name="LogTimeZone">Europe/Prague</Set>
+		<Set name="logDateFormat">dd/MMM/yyyy:HH:mm:ss Z</Set>
+                <!--Set name="buffered">false</Set--> <!-- jetty 4.1 performance tuning -->
+                <Set name="ignorePaths">
+                    <Array type="String">
+                        <Item>/images/*</Item>
+                        <Item>/ikony/*</Item>
+                        <Item>*.css</Item>
+                        <Item>*.js</Item>
+                    </Array>
+                </Set>
+            </New>
+        </Set>
+    </Ref>
+
+    <Set name="stopAtShutdown">true</Set>
+    <Set name="sendServerVersion">true</Set>
+</Configure>

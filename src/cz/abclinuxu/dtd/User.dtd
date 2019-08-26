@@ -1,0 +1,81 @@
+verze 2.0
+
+<!ELEMENT data (personal,communication,profile,settings,system,roles?,links?)>
+
+<!ELEMENT personal (sex,birth_year?,area?,city?,country?,signature?)>
+<!ELEMENT sex (#PCDATA)> <!-- man or woman -->
+<!ELEMENT birth_year (#PCDATA)> <!-- YYYY, v kterem roce se narodil -->
+<!ELEMENT area (#PCDATA)> <!-- nazev kraje -->
+<!ELEMENT city (#PCDATA)> <!-- jmeno mesta -->
+<!ELEMENT country (#PCDATA)> <!-- jmeno statu -->
+<!ELEMENT signature (#PCDATA)> <!-- podpis nebo citat vlozeny pro jeho prispevky do diskuse -->
+
+<!ELEMENT communication (email)>
+<!ELEMENT email (newsletter?,weekly_summary?,forum?,ad?)>
+<!ATTLIST email valid (yes|no) #REQUIRED>
+<!ATTLIST email verified (yes|no) #OPTIONAL>
+<!ELEMENT newsletter (#PCDATA)> <!-- yes or no, pravidelny mesicnik -->
+<!ELEMENT weekly_summary (#PCDATA)> <!-- yes or no, tydenni sumar clanku a zajimavosti -->
+<!ELEMENT ad (#PCDATA)> <!-- yes or no, pure advertisement email -->
+<!ELEMENT forum (#PCDATA)> <!-- yes or no, emailove rozhrani k diskusnimu foru -->
+
+<!ELEMENT profile (about_myself?,home_page?,photo?,distributions?,linux_user_from_year?)>
+<!ELEMENT about_myself (#PCDATA)> <!-- popis uzivatele -->
+<!ELEMENT home_page (#PCDATA)> <!-- URL domovske stranky -->
+<!ELEMENT photo (#PCDATA)> <!-- URL fotky uzivatele -->
+<!ELEMENT linux_user_from_year (#PCDATA)> <!-- YYYY, od kdy pouziva linux -->
+<!ELEMENT distributions (distribution)> <!-- ktere distribuce pouziva(l) -->
+<!ELEMENT distribution (#PCDATA)> <!-- jmeno distribuce -->
+
+<!ELEMENT links (link*)> <!-- zalozky -->
+<!ELEMENT link (rid, title, prefix, type)> <!-- objekt zalozky -->
+<!ELEMENT rid (#PCDATA)> <!-- ID relace objektu -->
+<!ELEMENT title (#PCDATA)> <!-- zaloha titulku objektu -->
+<!ELEMENT prefix (#PCDATA)> <!-- prefix URL -->
+<!ELEMENT type (#PCDATA)> <!-- typ objektu -->
+
+<!ELEMENT settings (emoticons?, social_bookmarks?, cookie_valid?,index_discussions?, index_stories?, index_tail_digest_stories?, index_links?, template_links?, return_to_forum?,
+                    blog?, css?, inline_css?, guidepost?, blacklist?, feeds?, hp_all_stories?, rte?, index_articles?, index_complete_articles?)>
+<!ELEMENT emoticons (#PCDATA)> <!-- yes or no, zda nahrazovat emotikony obrazkem -->
+<!ELEMENT signatures (#PCDATA)> <!-- yes or no, zda zobrazovat signatury -->
+<!ELEMENT guidepost (#PCDATA)> <!-- yes or no, zda zobrazovat rozcestnik -->
+<!ELEMENT feeds (#PCDATA)> <!-- comma separated list of server ids to be displayed in guidepost -->
+<!ELEMENT cookie_valid (#PCDATA)> <!-- integer, doba platnosti prihlasovaci cookie -->
+<!ELEMENT index_discussions (#PCDATA)> <!-- integer, pocet diskusi na hlavni strance. -1 : vsechny -->
+<!ELEMENT index_news (#PCDATA)> <!-- integer, pocet zpravicek na hlavni strance -->
+<!ELEMENT index_stories (#PCDATA)> <!-- integer, pocet zapisu blogu na hlavni strance -->
+<!ELEMENT index_tail_digest_stories (#PCDATA)> <!-- integer, pocet vyberovych zapisu z blogu na hlavni strance -->
+<!ELEMENT index_links (#PCDATA)> <!-- integer, pocet odkazu pro jeden server na hlavni strance -->
+<!ELEMENT index_articles (#PCDATA)> <!-- integer, pocet clanku na hlavni strance -->
+<!ELEMENT index_complete_articles (#PCDATA)> <!-- integer, pocet nezkracenych clanku na hlavni strance (podmnozina celkoveho poctu) -->
+<!ELEMENT template_links (#PCDATA)> <!-- integer, pocet odkazu pro jeden server mimo hlavni stranku -->
+<!ELEMENT found_size (#PCDATA)> <!-- integer, pocet nalezenych objektu na strance -->
+<!ELEMENT forum_size (#PCDATA)> <!-- integer, pocet zobrazenych diskusi na strance -->
+<!ELEMENT page_size (#PCDATA)> <!-- integer, defaultni velikost stranky -->
+<!ELEMENT return_to_forum (#PCDATA)> <!-- yes or no, zda se po presunu diskuse vratit do diskusniho fora -->
+<!ELEMENT blog (#PCDATA)> <!-- integer, cislo blogu -->
+<!ATTLIST blog name (#PCDATA) #REQUIRED> <!-- name of blog, part of URL -->
+<!ELEMENT css (#PCDATA)> <!-- URL of CSS to be used instead of default one -->
+<!ELEMENT blacklist (uid*,name*)> <!-- Container of users in blacklist -->
+<!ELEMENT uid (#PCDATA)> <!-- ID of a blocked user in blacklist -->
+<!ELEMENT name (#PCDATA)> <!-- name of anonym visitor blocked in blacklist -->
+<!ELEMENT hp_all_stories (#PCDATA)> <!-- yes or no, whether to display all stories, including banned by administrator -->
+<!ELEMENT rte (#PCDATA)> <!-- textarea or wysiwyg, this settings controls rich text editor component behaviour -->
+<!ELEMENT inline_css (#PCDATA)> <!-- CSS content to be included in every page -->
+<!ELEMENT social_bookmarks (#PCDATA)> <!-- yes or no, zda zobrazovat ikonky pro zalozkove sluzby -->
+
+<!ELEMENT system (registration_date?,group?)>
+<!ELEMENT registration_date (#PCDATA)> <!-- ISO format, kdy se zaregistroval -->
+<!ELEMENT group (#PCDATA)> <!-- integer, id of group, to which user belongs -->
+
+<!ELEMENT roles (role+)>
+<!ELEMENT role (#PCDATA)> <!-- id of role, see Roles.java -->
+
+<!--
+
+Deprecated properties:
+
+/data/system/last_login_date
+/data/system/author_id
+
+-->

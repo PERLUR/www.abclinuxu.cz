@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>ABC Linux</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body background="images/bg-line.gif">
+
+<div class="obal_ls">
+
+        <div class="ls"><div class="s">
+
+            <div class="s_nad_h1">
+              <div class="s_nad_pod_h1">
+                <h1>Vyhledávání</h1>
+              </div>
+            </div>
+
+<div class="applet">
+<applet 
+	archive="siteoncd-v1.2.jar,archive.jar"
+	code="cz.zapletal.siteoncd.MainApplet"
+	name="cz.zapletal.siteoncd.MainApplet"
+	width="210"
+	height="410">
+	
+<!-- Relative path (to applet base) of the index file (ZIP) -->
+<param name="index" value="index.zip">
+
+<!-- Stopwords file - MUST BE SAME AS IN INDEX! -->
+<param name="stopWords" value="czech">
+
+<!-- Extended server mode -->
+<param name="hasServer" value="true">
+
+<!-- Target frame (default: MAIN) -->
+<param name="target" value="MAIN">
+
+<!-- Disk installation enabled? (default: false) -->
+<param name="diskInstall" value="true">
+
+<!-- Is navigation tree enabled? -->
+<param name="navigEnabled" value="false">
+
+<!-- Relative path (to applet base) of the navigation tree file (one-file GZ) -->
+<param name="navig" value="navig.gz">
+
+<!-- Silent operation (= disinstall-false, navigation-false + no dialogs -->
+<param name="silent" value="false">
+
+<!-- Colors for the applet -->
+<param name="backColor" value="#ececec">
+<param name="frontColor" value="#ececec">
+<param name="textColor" value="#000">
+
+<!-- Java LookAndFeel -->
+<param name="lookAndFeel"
+value="com.jgoodies.looks.plastic.PlasticXPLookAndFeel">
+
+<!-- JGoodies Theme -->
+<param name="lookTheme"
+value="com.jgoodies.looks.plastic.theme.ExperienceBlue">
+
+</applet>
+</div>
+
+            <div class="s_nad_h1">
+              <div class="s_nad_pod_h1">
+                <h1>Nápověda</h1>
+              </div>
+            </div>
+	<div class="s_sekce">
+	  <ul>
+	    <li><a href="siteoncd/about.html" target="main">O SiteOnCD</a></li>
+	    <li><a href="siteoncd/help.html" target="main">Nápověda</a></li>
+	  </ul>
+	</div>
+
+
+</div></div> <!-- ls, s -->
+</div> <!-- obal_ls -->
+
+</body>
+</html>
