@@ -1,19 +1,20 @@
 language: java
+sudo: true
 git:
   depth: false
-services:
-  - mysql
 addons:
   apt:
     - ldap-utils
     - slapd
+services:
+  - mysql
 before_script:
   - mkdir -p /home/travis/build/PERLUR/deploy
   - cp conf/conf_devel.properties ./conf_deploy.properties
-  - cp portal/conf/ldap/stickfish.schema /etc/openldap/schema
-  - echo 'include /etc/openldap/schema/stickfish.schema' >> /etc/slapd.conf
-  - echo 'suffix          "dc=stickfish,dc=net"' >> /etc/slapd.conf
-  - echo 'rootdn          "cn=Manager,dc=stickfish,dc=net"' >> /etc/slapd.conf
-  - echo 'rootpw          secret' >> /etc/slapd.conf
+  - sudo cp portal/conf/ldap/stickfish.schema /etc/openldap/schema
+  - sudo echo 'include /etc/openldap/schema/stickfish.schema' >> /etc/slapd.conf
+  - sudo echo 'suffix          "dc=stickfish,dc=net"' >> /etc/slapd.conf
+  - sudo echo 'rootdn          "cn=Manager,dc=stickfish,dc=net"' >> /etc/slapd.conf
+  - sudo echo 'rootpw          secret' >> /etc/slapd.conf
 script:
   - ant
