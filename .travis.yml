@@ -4,6 +4,6 @@ git:
 env:
   - DB=mysql
 before_script:
-  - cp conf/conf_devel.properties ./conf_devel.properties
+  - cp conf/conf_devel.properties ./conf_deploy.properties
 script:
   - ant
