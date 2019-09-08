@@ -10,6 +10,7 @@ addons:
 services:
   - mysql
 before_script:
+  - ./bin/travis/import_test_db.sh
   - mkdir -p /home/travis/build/PERLUR/deploy
   - cp conf/conf_devel.properties ./conf_deploy.properties
   - sudo cp conf/ldap/stickfish.schema /etc/ldap/schema
