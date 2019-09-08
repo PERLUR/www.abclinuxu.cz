@@ -1,0 +1,18 @@
+language: java
+sudo: true
+git:
+  depth: false
+addons:
+  apt:
+    packages:
+      - ldap-utils
+      - slapd
+services:
+  - mysql
+before_script:
+  - mkdir -p /home/travis/build/PERLUR/deploy
+  - cp conf/conf_devel.properties ./conf_deploy.properties
+  - sudo cp conf/ldap/stickfish.schema /etc/ldap/schema
+  - sudo systemctl start slapd
+script:
+  - ant
