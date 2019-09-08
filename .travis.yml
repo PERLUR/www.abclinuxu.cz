@@ -12,10 +12,13 @@ services:
 before_script:
   - mkdir -p /home/travis/build/PERLUR/deploy
   - cp conf/conf_devel.properties ./conf_deploy.properties
-  - sudo cp portal/conf/ldap/stickfish.schema /etc/openldap/schema
+  - sudo cp conf/ldap/stickfish.schema /etc/openldap/schema
   - sudo echo 'include /etc/openldap/schema/stickfish.schema' >> /etc/slapd.conf
   - sudo echo 'suffix          "dc=stickfish,dc=net"' >> /etc/slapd.conf
   - sudo echo 'rootdn          "cn=Manager,dc=stickfish,dc=net"' >> /etc/slapd.conf
   - sudo echo 'rootpw          secret' >> /etc/slapd.conf
+  - sudo systemctl start slapd
+  - ldapadd -x -D 'cn=manager,dc=stickfish,dc=net' -w secret < portal/misc/init.ldif
+  - ldapadd -x -D 'cn=manager,dc=stickfish,dc=net' -w secret < portal/misc/users.ldif
 script:
   - ant
