@@ -1,3 +1,9 @@
 language: java
+git:
+  depth: false
+env:
+  - DB=mysql
+before_script:
+  - cp conf/conf_devel.properties ./conf_devel.properties
 script:
   - ant
