@@ -6,7 +6,7 @@ services:
 env:
   - DB=mysql
 before_script:
-  - mkdir -o /home/travis/build/PERLUR/deploy
+  - mkdir -p /home/travis/build/PERLUR/deploy
   - cp conf/conf_devel.properties ./conf_deploy.properties
 script:
   - ant
