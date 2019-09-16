@@ -16,7 +16,7 @@
         ${TOOL.render(PARAMS.text,USER!)}
     </fieldset>
 <#else>
-    <p>Tato stránka slouží pro zadávání <b>administrativních</b> požadavků na správce portálu www.abclinuxu.cz. Pokud potřebujete založit novou sekci, zapomněli jste přihlašovací údaje a podobně, použijte tento formulář. Pokud máte námět na vylepšení nebo jste našli chybu, pište do <a href="http://bugzilla.abclinuxu.cz">bugzilly</a>, ušetříte nám tak práci a budete mít přehled o vyřízení vaši žádosti. Bugzilla sdílí uživatelské učty s tímto portálem, takže můžete použít přihlašovací údaje z AbcLinuxu.</p>
+    <p>Tato stránka slouží pro zadávání <b>administrativních</b> požadavků na správce portálu www.abclinuxu.cz. Pokud potřebujete založit novou sekci, zapomněli jste přihlašovací údaje a podobně, použijte tento formulář. Pokud máte námět na vylepšení nebo jste našli chybu, pište na <a href="https://github.com/PERLUR/www.abclinuxu.cz/">GitHub</a>, ušetříte nám tak práci a budete mít přehled o vyřízení vaši žádosti.</p>
 
     <p>Jedná-li se o námět na novou anketu, považujte jeho smazání za jeho vyřízení. Neznamená to, že bychom ho ignorovali, ale že jsme ho zařadili do seznamu dalších námětů. Ne všechny náměty se stanou anketami, protože námětů je prostě moc. Z vašich návrhů vybíráme ty nejzajímavější.</p>
 
