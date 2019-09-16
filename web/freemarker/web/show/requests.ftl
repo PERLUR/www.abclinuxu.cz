@@ -53,7 +53,7 @@
     </#if>
 </#if>
 
-<p>Aplikační chyby prosím hlaste do <a href="http://bugzilla.abclinuxu.cz">bugzilly</a></p>
+<p>Aplikační chyby prosím hlaste jako <a href="https://github.com/PERLUR/www.abclinuxu.cz/issues">GitHub Issues</a></p>
 
 <a name="form"></a>
 <form action="${URL.make("/EditRequest")}" method="POST">
