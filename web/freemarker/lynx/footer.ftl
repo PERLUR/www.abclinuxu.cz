@@ -52,7 +52,7 @@
 <h3>O serveru</h3>
 <p>
  <a href="${URL.make("/pozadavky")}">Požadavky</a>
- <a href="http://bugzilla.abclinuxu.cz/">Bugzilla</a>
+ <a href="https://github.com/PERLUR/www.abclinuxu.cz/">GitHub</a>
  <a href="/napoveda/rss-a-jine-pristupy">RSS a PDA</a>
  <a href="/portal/propagace">Propagace</a>
  <a href="/clanky/show/44049">Tým AbcLinuxu</a>
