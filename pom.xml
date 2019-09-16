@@ -3,6 +3,10 @@
   <groupId>cz.abclinuxu.portal</groupId>
   <artifactId>abclinuxu-portal</artifactId>
   <version>1</version>
+  <properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+  </properties>
   <dependencies>
     <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
     <dependency>
