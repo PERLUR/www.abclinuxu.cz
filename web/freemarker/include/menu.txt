@@ -104,14 +104,13 @@
     <li><a href="/portal/propagace">Propagace</a></li>
     <li><a href="/reklama">Inzerce</a></li>
     <li><a href="/napoveda/rss-a-jine-pristupy">RSS feedy a PDA</a></li>
-    <li><a href="http://bugzilla.abclinuxu.cz"  title="Požadavky týkající se funkčnosti portálu" rel="nofollow">Bugzilla - chyby a náměty</a></li>
+    <li><a href="https://github.com/PERLUR/www.abclinuxu.cz/issues"  title="Požadavky týkající se funkčnosti portálu" rel="nofollow">GitHub - chyby a náměty</a></li>
     <li><a href="/pozadavky" title="Požadavky týkající se obsahu portálu">Vzkazy správcům (${VARS.counter.REQUESTS})</a></li>
     <li><a href="/vyvoj">Zdrojové kódy</a></li>
     <li><a href="javascript:addSidebar();">Přidej sidebar</a></li>
     <li><a href="javascript:addBookmark();">Přidej mezi oblíbené</a></li>
     <li><a href="javascript:setHomepage();">Nastav jako domácí stránku</a></li>
   </ul></li>
-<li><a href="http://www.abcprace.cz">Práce</a></li>
 <li><a href="/napoveda/mapa-serveru" title="Mapa stránek a dalších služeb">Mapa</a></li>
 </ul>
 
