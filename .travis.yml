@@ -16,6 +16,6 @@ before_script:
   - sudo cp conf/ldap/stickfish.schema /etc/ldap/schema
   - sudo systemctl start slapd
 install:
-  - ""
+  - "" # Workaround till full migration to Maven
 script:
   - ant
