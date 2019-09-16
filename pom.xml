@@ -148,7 +148,12 @@
       <artifactId>javawebparts-filter</artifactId>
       <version>1.0-beta4</version>
     </dependency>
-
+    <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-core -->
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-core</artifactId>
+      <version>3.0.0</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec -->
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
