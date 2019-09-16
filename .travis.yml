@@ -15,5 +15,7 @@ before_script:
   - cp conf/conf_devel.properties ./conf_deploy.properties
   - sudo cp conf/ldap/stickfish.schema /etc/ldap/schema
   - sudo systemctl start slapd
+install:
+  - ""
 script:
   - ant
